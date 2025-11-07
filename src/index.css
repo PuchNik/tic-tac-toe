@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+.custom-bg {
+    background-color: #232323;
+}
+
+.custom-button {
+    background-color: #605fff;
+}
+
+.custom-text {
+    color: #ebebeb;
+}
