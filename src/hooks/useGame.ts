@@ -1,9 +1,7 @@
 import { useState } from "react";
 import type { IsCurrentPlayer } from "../components/types/currentPlayer";
-import {
-    PLAYING_FIELD_CELLS,
-    processMove,
-} from "../utils/gameLogic";
+import { PLAYING_FIELD_CELLS } from "../constants/gameConstants";
+import { processMove } from "../utils";
 
 export const useGame = () => {
     // Состояния игры
@@ -15,7 +13,7 @@ export const useGame = () => {
 
     // Обработчик клика по клетке
     const handleCellClick = (index: number): void => {
-        if (field[index] === "" && isGameEnded === false) {
+        if (field[index] === "" && !isGameEnded) {
             const result = processMove(field, index, currentPlayer);
 
             setField(result.newField);
